@@ -40,6 +40,16 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventHolder>
 
     @Override
     public void onBindViewHolder(final EventHolder holder, int position) {
+        switch (position) {
+            case 0:
+                holder.itemView.setBackground(holder.itemView.getContext().getDrawable(R.drawable.bg));
+                break;
+            case 1:
+                holder.itemView.setBackground(holder.itemView.getContext().getDrawable(R.drawable.ex1));
+                break;
+            case 2:
+                holder.itemView.setBackground(holder.itemView.getContext().getDrawable(R.drawable.a));
+        }
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

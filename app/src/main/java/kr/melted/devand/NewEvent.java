@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import kr.melted.devand.base.BaseActivity;
 import kr.melted.devand.network.base.APIAdapter;
@@ -47,7 +48,10 @@ public class NewEvent extends BaseActivity {
                 apiService.createEvent(name.getText().toString(), description.getText().toString(), created_by.getText().toString(), new Callback<String>() {
                     @Override
                     public void success(String s, Response response) {
-                        finish();
+                        if(response.getStatus() == 200)
+                            finish();
+                        else
+                            Toast.makeText(NewEvent.this, "이벤트를 만들지 못했습니다.", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override

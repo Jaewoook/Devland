@@ -4,6 +4,9 @@ import java.util.List;
 
 import kr.melted.devand.network.model.Event;
 import retrofit.Callback;
+import retrofit.http.Body;
+import retrofit.http.Field;
+import retrofit.http.FormUrlEncoded;
 import retrofit.http.GET;
 import retrofit.http.POST;
 
@@ -16,8 +19,9 @@ public class APIAdapter extends BaseAdapter {
         @GET("/event")
         void getEventList(Callback<List<Event>> db);
 
+        @FormUrlEncoded
         @POST("/event")
-        void createEvent(String name, String desc, String create_by, Callback<String> db);
+        void createEvent(@Field("name")String name,@Field("description") String desc, @Field("created_by") String create_by, Callback<String> db);
     }
 
     public static APIService getInstance() {

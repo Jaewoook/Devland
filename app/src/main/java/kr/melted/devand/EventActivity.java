@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import kr.melted.devand.adapter.PeopleAdapter;
@@ -24,9 +26,9 @@ public class EventActivity extends BaseActivity {
     private PeopleAdapter adapter;
 
     // TODO 연결
-    private TextView title;
     private Button join;
 
+    LinearLayout bar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +39,7 @@ public class EventActivity extends BaseActivity {
     @Override
     protected void init() {
         llManager = new LinearLayoutManager(this);
-        adapter = new PeopleAdapter();
+        adapter = new PeopleAdapter(getSupportFragmentManager());
 
     }
 

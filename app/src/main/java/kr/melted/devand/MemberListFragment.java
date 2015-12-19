@@ -40,7 +40,7 @@ public class MemberListFragment extends BaseFragment implements RecyclerItemClic
 
     @Override
     protected void init() {
-        peopleAdapter = new PeopleAdapter();
+        peopleAdapter = new PeopleAdapter(getFragmentManager());
         llManager = new LinearLayoutManager(getContext());
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.list);
         recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), this));

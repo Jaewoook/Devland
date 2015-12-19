@@ -10,16 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary">
-        <Button
-            android:id="@+id/save"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:layout_gravity="right"
-            android:textSize="18sp"
-            android:textColor="@android:color/white"
-            android:textStyle="bold"
-            android:text="저장"/>
     </android.support.v7.widget.Toolbar>
 
     <android.support.v7.widget.RecyclerView
