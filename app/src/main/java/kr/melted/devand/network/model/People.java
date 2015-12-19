@@ -8,6 +8,7 @@ public class People {
     public People(String name, String position, String comment, String event_name) {
         this.name = name;
         this.position = position;
+        this.comment = comment;
         this.event_name = event_name;
     }
 
