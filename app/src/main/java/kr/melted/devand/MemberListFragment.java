@@ -61,7 +61,7 @@ public class MemberListFragment extends BaseFragment implements RecyclerItemClic
 
     @Override
     public void onItemLongPress(View childView, int position) {
-        Toast.makeText(getContext(), "ㅎㅇㅎㅇㅎㅇ", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(), "ㅎㅇㅎㅇㅎㅇ", Toast.LENGTH_SHORT).show();
     }
 }
 
