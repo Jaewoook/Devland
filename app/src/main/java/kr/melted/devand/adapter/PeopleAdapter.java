@@ -49,6 +49,11 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.PeopleHold
 
         public PeopleHolder(View itemView) {
             super(itemView);
+            name = (TextView) itemView.findViewById(R.id.people_text1);
+            position = (TextView) itemView.findViewById(R.id.people_text2);
+            comment = (TextView) itemView.findViewById(R.id.people_text3);
         }
     }
+
+
 }
