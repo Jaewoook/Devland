@@ -23,6 +23,11 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.PeopleHold
 
     public PeopleAdapter() {
         people = new ArrayList<People>();
+        people.add(new People("안재욱", "개발자", "안녕하세여", "앱잼"));
+        people.add(new People("박성민", "개발자", "안녕하세여", "앱잼"));
+        people.add(new People("안재욱", "개발자", "안녕하세여", "앱잼"));
+        people.add(new People("안재욱", "개발자", "안녕하세여", "앱잼"));
+        people.add(new People("안재욱", "개발자", "안녕하세여", "앱잼"));
     }
 
     @Override
@@ -34,7 +39,9 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.PeopleHold
 
     @Override
     public void onBindViewHolder(PeopleHolder holder, int position) {
-
+        holder.name.setText(people.get(position).name);
+        holder.comment.setText(people.get(position).comment);
+        holder.position.setText(people.get(position).position);
     }
 
     @Override
