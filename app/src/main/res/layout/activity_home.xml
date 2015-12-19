@@ -12,11 +12,9 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"/>
 
-    <fragment
-        android:id="@+id/content"
-        android:name="kr.melted.devand.MainFragment"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout="@layout/fragment_main" />
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

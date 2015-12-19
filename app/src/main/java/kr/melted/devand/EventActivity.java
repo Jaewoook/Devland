@@ -3,16 +3,11 @@ package kr.melted.devand;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.Button;
+import android.widget.TextView;
 
-import java.util.List;
-
-import kr.melted.devand.adapter.EventAdapter;
+import kr.melted.devand.adapter.PeopleAdapter;
 import kr.melted.devand.base.BaseActivity;
-import kr.melted.devand.network.base.APIAdapter;
-import kr.melted.devand.network.model.Event;
-import retrofit.Callback;
-import retrofit.Response;
-import retrofit.Retrofit;
 
 /**
  * Created by Envy on 2015-12-20.
@@ -24,42 +19,31 @@ public class EventActivity extends BaseActivity {
 
     private RecyclerView list;
     private LinearLayoutManager llManager;
-    private EventAdapter eventAdapter;
+    private PeopleAdapter adapter;
 
-    private APIAdapter.APIService apiService = APIAdapter.getInstance();
+    // TODO 연결
+    private TextView title;
+    private Button join;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setLayoutResource(R.layout.fragment_main);
+        setLayoutResource(R.layout.fragment_member_list);
         super.onCreate(savedInstanceState);
     }
 
     @Override
     protected void init() {
         llManager = new LinearLayoutManager(this);
-        eventAdapter = new EventAdapter();
+        adapter = new PeopleAdapter();
 
-        apiService.getEventList(new Callback<List<Event>>() {
-            @Override
-            public void onResponse(Response<List<Event>> response, Retrofit retrofit) {
-                for(int i = 0; i < response.body().size(); i++) {
-                    eventAdapter = new EventAdapter(response.body());
-                }
-            }
-
-            @Override
-            public void onFailure(Throwable t) {
-
-            }
-        });
     }
 
     @Override
     protected void initView() {
-        list = (RecyclerView) findViewById(R.id.main_list);
+        list = (RecyclerView) findViewById(R.id.list);
         list.setLayoutManager(llManager);
-        list.setAdapter(eventAdapter);
+        list.setAdapter(adapter);
     }
 
     @Override
