@@ -8,9 +8,13 @@ import android.support.v7.app.AppCompatActivity;
  */
 public abstract class BaseActivity extends AppCompatActivity {
 
+
+    private int layoutRes;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(layoutRes);
         init();
         initView();
         initMenu();
@@ -19,4 +23,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected abstract void init();
     protected abstract void initView();
     protected abstract void initMenu();
+
+    public void setLayoutResource(int layoutRes) {
+        this.layoutRes = layoutRes;
+    }
 }

@@ -31,7 +31,7 @@ public class EventActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.fragment_main);
+        setLayoutResource(R.layout.fragment_main);
         super.onCreate(savedInstanceState);
     }
 
