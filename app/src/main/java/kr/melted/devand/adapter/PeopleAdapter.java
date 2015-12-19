@@ -39,7 +39,7 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.PeopleHold
 
     @Override
     public int getItemCount() {
-        return 0;
+        return people.size();
     }
 
     public static class PeopleHolder extends RecyclerView.ViewHolder {

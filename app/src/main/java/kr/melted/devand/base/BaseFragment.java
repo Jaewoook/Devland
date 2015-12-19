@@ -34,4 +34,7 @@ public abstract class BaseFragment extends Fragment {
     public void setLayoutRes(int resid) {
         layoutRes = resid;
     }
+    public View findViewById(int resId) {
+        return rootView.findViewById(resId);
+    }
 }

@@ -7,6 +7,9 @@ import kr.melted.devand.base.BaseActivity;
 
 public class HomeActivity extends BaseActivity {
 
+
+    private MemberListFragment memberListFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,12 +18,11 @@ public class HomeActivity extends BaseActivity {
 
     @Override
     protected void init() {
-
     }
 
     @Override
     protected void initView() {
-
+        memberListFragment = (MemberListFragment) getSupportFragmentManager().findFragmentById(R.id.content);
     }
 
     @Override
