@@ -19,6 +19,8 @@ import kr.melted.devand.base.BaseFragment;
 public class MemberListFragment extends BaseFragment {
 
 
+    private static final int LAYOUT_RESOURCE = R.layout.fragment_member_list;
+
     private LinearLayoutManager llManager;
     private RecyclerView list;
     private PeopleAdapter peopleAdapter;
@@ -31,8 +33,8 @@ public class MemberListFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_member_list, container, false);
+        setLayoutRes(LAYOUT_RESOURCE);
+        return super.onCreateView(inflater, container, savedInstanceState);
     }
 
     @Override
@@ -44,6 +46,8 @@ public class MemberListFragment extends BaseFragment {
     @Override
     protected void initView() {
         list = (RecyclerView) findViewById(R.id.list);
+        list.setLayoutManager(llManager);
+        list.setAdapter(peopleAdapter);
     }
 }
 
