@@ -14,7 +14,7 @@ public class APIAdapter extends BaseAdapter {
 
     public interface APIService {
         @GET("/event")
-        void getEventList(Callback<List<Event>> cb);
+        void getEventList(Callback<List<Event>> db);
 
         @POST("/event")
         void createEvent(String name, String desc, String create_by, Callback<String> db);

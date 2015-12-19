@@ -1,8 +1,10 @@
 package kr.melted.devand;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -41,6 +43,11 @@ public class EventActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitleTextColor(Color.WHITE);
+        setSupportActionBar(toolbar);
+
+
         list = (RecyclerView) findViewById(R.id.list);
         list.setLayoutManager(llManager);
         list.setAdapter(adapter);

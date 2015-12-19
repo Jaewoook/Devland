@@ -1,6 +1,6 @@
 package kr.melted.devand.network.base;
 
-import retrofit.Retrofit;
+import retrofit.RestAdapter;
 
 /**
  * Created by Envy on 2015-12-20.
@@ -8,14 +8,15 @@ import retrofit.Retrofit;
 public class BaseAdapter {
 
 
-    private static final String ENDPOINT = "http://218.55.77.114:8080";
+    private static final String ENDPOINT = "http://192.168.211.164:8080";
 
-    private static Retrofit retrofit;
+    private static RestAdapter retrofit;
 
-    public static Retrofit getRetrofit() {
-        return retrofit != null
-                ? retrofit = new Retrofit.Builder()
-                .baseUrl(ENDPOINT)
+    public static RestAdapter getRetrofit() {
+        return retrofit == null
+                ? retrofit = new RestAdapter.Builder()
+                .setEndpoint(ENDPOINT)
+                .setLogLevel(RestAdapter.LogLevel.FULL)
                 .build()
                 : retrofit;
     }
