@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import kr.melted.devand.adapter.PeopleAdapter;
 import kr.melted.devand.base.BaseFragment;
@@ -16,7 +17,7 @@ import kr.melted.devand.base.BaseFragment;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MemberListFragment extends BaseFragment {
+public class MemberListFragment extends BaseFragment implements RecyclerItemClickListener.OnItemClickListener  {
 
 
     private static final int LAYOUT_RESOURCE = R.layout.fragment_member_list;
@@ -41,6 +42,9 @@ public class MemberListFragment extends BaseFragment {
     protected void init() {
         peopleAdapter = new PeopleAdapter();
         llManager = new LinearLayoutManager(getContext());
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.list);
+        recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), this));
+
     }
 
     @Override
@@ -48,6 +52,16 @@ public class MemberListFragment extends BaseFragment {
         list = (RecyclerView) findViewById(R.id.list);
         list.setLayoutManager(llManager);
         list.setAdapter(peopleAdapter);
+    }
+
+    @Override
+    public void onItemClick(View childView, int position) {
+
+    }
+
+    @Override
+    public void onItemLongPress(View childView, int position) {
+        Toast.makeText(getContext(), "ㅎㅇㅎㅇㅎㅇ", Toast.LENGTH_SHORT).show();
     }
 }
 
