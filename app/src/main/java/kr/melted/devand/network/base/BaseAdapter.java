@@ -8,7 +8,7 @@ import retrofit.Retrofit;
 public class BaseAdapter {
 
 
-    private static final String ENDPOINT = "http://localhost:8080";
+    private static final String ENDPOINT = "http://218.55.77.114:8080";
 
     private static Retrofit retrofit;
 

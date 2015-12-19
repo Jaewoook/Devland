@@ -14,9 +14,9 @@
 
     <fragment
         android:id="@+id/content"
-        android:name="kr.melted.devand.MemberListFragment"
+        android:name="kr.melted.devand.MainFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout="@layout/fragment_member_list" />
+        tools:layout="@layout/fragment_main" />
 
 </LinearLayout>

@@ -1,5 +1,6 @@
 package kr.melted.devand.adapter;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,7 +8,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import kr.melted.devand.EventActivity;
 import kr.melted.devand.R;
 import kr.melted.devand.network.model.Event;
 
@@ -19,7 +22,14 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventHolder>
 
     private static final int ITEMVIEW_LAYOUT_RESOURCE = R.layout.main_list;
 
-    private ArrayList<Event> events;
+    private List<Event> events;
+
+    public EventAdapter() {
+    }
+
+    public EventAdapter(List<Event> events) {
+        this.events = events;
+    }
 
     @Override
     public EventHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -29,7 +39,14 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventHolder>
     }
 
     @Override
-    public void onBindViewHolder(EventHolder holder, int position) {
+    public void onBindViewHolder(final EventHolder holder, int position) {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(holder.itemView.getContext(), EventActivity.class);
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
         holder.title.setText(events.get(position).name);
         holder.subtitle.setText(events.get(position).description);
     }
